@@ -1,0 +1,96 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tipa}
+\usepackage{tipx}
+\usepackage{vowel}
+\usepackage{phonrule}
+\usepackage{qtree}
+
+\usepackage{CJKutf8}
+\usepackage{xpinyin}
+\usepackage{ruby}
+\renewcommand{\rubysep}{\defaultrubysep}
+
+\title{LaTeX for linguists}
+\author{Paulina Pieper}
+\date{April 2021}
+
+\begin{document}
+
+\section{}
+%http://www.l.u-tokyo.ac.jp/~fkr/tipa/tipaman.pdf
+
+\subsection{\textipa{'INglIS}}
+\textipa{/maI 'neIm Iz paw'lIna/
+/aIm 'twEnti 'fO: 'jI@z @ld/ /aI 'lIv In 'gdansk/ /aI 'gr\ae djUeItd In 'A:t 'hIst@ri. naU aIm 'st2diN 'INglIS @n 'n\ae \textteshlig r@l 'l\ae NgwI\textdyoghlig  'pr@UsEsIN/}
+\bigskip
+
+\subsection{\textipa{'pOl\|[sk\super ji}}
+\textipa{/'mam \|[na 'im\super ji\~E paw'l\super jina/
+/mam \|[dva'\t{d\textctyogh}EC\t{tC}a '\t{t\:s}\|[tEr1 'la\|[ta/
+/'ukO\textltailn\t{t\:s}1wam 'x\super ji\|[s\|[tOr\super ji\~E '\:s\|[tuki
+'\|[tEra\|[z \|[s\|[tu'\|[d\super jiuj\~E 'filOlOg\super ji\~E 'a\|[ng\super jiEl\|[sk\~O zE \|[spE'\t{\|[t\|[s}jal\|[nOC\~O f p\:sE'\|[tvaza\|[n\super ju 'jE\|[z1ka \|[na'\|[tural\|[nEgO/}
+
+\bigskip
+
+\section{Standard Chinese vowels}
+
+\begin{vowel}
+\putcvowel[l]{i}{1}
+\putcvowel[r]{y}{1}
+\putcvowel{\textlowering{e}}{2}
+\putcvowel{\textbari}{9}
+\putcvowel{a}{4}
+\putcvowel[l]{\textramshorns}{7}
+\putcvowel[r]{o}{7}
+\putcvowel{u}{8}
+\putcvowel{\textrhookschwa}{11}
+\end{vowel}
+
+
+\section{}
+
+%https://sunsite.icm.edu.pl/pub/CTAN/macros/latex/contrib/phonrule/phonrule-doc.pdf
+\phonc{/l/}{[\texttoptiebar{\textsubring{l}l}]}{
+\phonfeat[l]{
++consonant \\
+-voice}
+} \phold \\
+\\
+\\
+\phonr{/l/}{[\textsubbridge{\textltilde}]}{\texttheta}
+
+\newpage
+\section{}
+%https://www.ling.upenn.edu/advice/latex/qtree/qtreenotes.pdf
+Gomez may have been keeping quiet and minding his own business.
+
+\Tree [.S \qroof{ Gomez}.NP [.VP [.MOD may ] [.VP [.PERF have ] [.VP [.PROG been ] [.VP [.VP [.V keeping ] [.AP [.A quiet ] ] ] [ and ] [.VP [.V minding ] \qroof{his own business}.NP ] ] ] ] ] ]
+
+
+\section{}
+
+\begin{CJK*}{UTF8}{min}
+\subsection{日本語でセクション}
+これは日本語でセクションです。何をここで書けばいいのか分からないでも、\LaTeXに日本語でやってみたい。
+\\
+\\
+%https://tex.stackexchange.com/questions/95729/typesetting-furigana-above-and-below-original-text
+これは\ruby{日}{に}\ruby{本}{ほん}\ruby{語}{ご}でセクションです。\ruby{何}{なに}をここで\ruby{書}{か}けばいいのか\ruby{分}{わ}からないでも、\ruby{\LaTeX}{ラテック}に\ruby{日}{に}\ruby{本}{ほん}\ruby{語}{ご}でやってみたい。
+\end{CJK*}
+
+\begin{CJK*}{UTF8}{gbsn}
+
+\subsection{汉语的段}
+这是汉语的段。我不知道什么写这里。但是我想看看汉语的\LaTeX。
+\\
+\\
+%https://sunsite.icm.edu.pl/pub/CTAN/macros/latex/contrib/xpinyin/xpinyin.pdf
+\begin{pinyinscope}
+这是汉语的段。我不知道什么写这里。但是我想看看汉语的\LaTeX。
+\end{pinyinscope}
+
+\end{CJK*}
+
+\end{document}
